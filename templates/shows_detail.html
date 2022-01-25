@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<div class="container button__container">
+    <a href="/shows/" class="btn btn-primary">shows</a>
+</div>
+<div>
+        <h2><a href="/shows/{{ object.id }}/">{{ object.title }}</a></h2>
+        <p>{{ object.description }}</p>
+        <img src="{{ object.image.url }}" alt="" width="250" height="250">
+        <p>{{ object.quantity }}</p>
+        <p>{{ object.genre }}</p>
+        <p>{{ object.date_filmed }}</p>
+</div>
+<div>
+    <h2>Comments: </h2>
+    <ul>
+        {% for i in object.show_comment.all %}
+            <li>
+            <p>{{ i.text }}</p>
+            <p>{{ i.created_date }}</p>
+            </li>
+
+        {% endfor %}
+    </ul>
+</div>
+
+<button type="button" class="btn btn-primary"><a href="/shows/{{ object.id }}/update/">Change</a></button>
+<button type="button" class=" btn btn-primary"><a href="/shows/{{ object.id }}/delete/">Delete</a></button>
+
+</body>
+</html>
