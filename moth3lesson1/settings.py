@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'shows',
-    'parser_app',
+    'parser_anime',
+    'custom_users',
 ]
 
 MIDDLEWARE = [
